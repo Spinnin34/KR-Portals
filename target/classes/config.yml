@@ -1,0 +1,25 @@
+#
+#   ██████╗██████╗ ██╗███╗  ██╗███╗  ██╗██╗███╗  ██╗
+#  ██╔════╝██╔══██╗██║████╗ ██║████╗ ██║██║████╗ ██║
+#  ╚█████╗░██████╔╝██║██╔██╗██║██╔██╗██║██║██╔██╗██║
+#   ╚═══██╗██╔═══╝ ██║██║╚████║██║╚████║██║██║╚████║
+#  ██████╔╝██║     ██║██║ ╚███║██║ ╚███║██║██║ ╚███║
+#  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚══╝╚═╝  ╚══╝╚═╝╚═╝  ╚══╝
+#
+
+locale: es
+portals:
+  end: true # ¿Están habilitados los portales finales?
+  nether: true # ¿Están habilitados los portales inferiores?
+destinations: # Cambiar mundos de destino (Nether - world_nether, End - world_the_end, Overworld - world)
+  end:
+    enabled: false # ¿Está habilitado el cambio de mundo de destino?
+    world: world_nether # Mundo de destino
+    coords: [ 0, 0, 0, 0, 0 ] # Coordenadas (X, Y, Z, Yaw, Pitch)
+  nether:
+    enabled: false # ¿Está habilitado el cambio de mundo de destino?
+    world: world_the_end # Mundo de destino
+    coords: [ 0, 0, 0, 0, 0 ] # Coordenadas (X, Y, Z, Yaw, Pitch)
+works:
+  players: true # Coordenadas
+  entities: true # ¿El complemento funciona en otras entidades?

@@ -1,0 +1,55 @@
+name: KR-Portals
+version: '${project.version}'
+main: p.krportals.KR_Portals
+load: STARTUP
+api-version: 1.13
+authors: [ Spinnin ]
+description: Plugin for managing portals.
+commands:
+  trueportals:
+    description: "Disable or enable portals"
+    usage: /trueportals
+    aliases: [ kr-portals ]
+permissions:
+  trueportals.commands.help:
+    description: Allows player to view help for plugin commands
+    default: op
+  trueportals.commands.info:
+    description: Allows player to view information about portals
+    default: op
+  trueportals.commands.reload:
+    description: Allows player to reload the plugin
+    default: op
+  trueportals.commands.portal.status:
+    description: Allows player to change the status of portals
+    default: op
+  trueportals.commands.destination.spawn:
+    description: Allows the player to teleport to a changed portal destination with a command
+    default: op
+  trueportals.commands.destination.setspawn:
+    description: Allows player to change the destination of portals
+    default: op
+  trueportals.except.portal:
+    description: Gives the player the permission to ignore portal restrictions
+    default: op
+  trueportals.except.destination:
+    description: Allows player to ignore changed portal destination
+    default: op
+  trueportals.*:
+    trueportals.commands.*: true
+    trueportals.except.*: true
+  trueportals.commands.*:
+    trueportals.commands.help: true
+    trueportals.commands.info: true
+    trueportals.commands.reload: true
+    trueportals.commands.portal.*: true
+    trueportals.commands.destination.*: true
+  trueportals.commands.portal.*:
+    trueportals.commands.destination.setspawn: true
+    trueportals.commands.destination.spawn: true
+  trueportals.commands.destination.*:
+    trueportals.commands.destination.setspawn: true
+    trueportals.commands.destination.spawn: true
+  trueportals.except.*:
+    trueportals.except.portal: true
+    trueportals.except.destination: true

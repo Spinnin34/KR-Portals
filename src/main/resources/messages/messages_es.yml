@@ -1,0 +1,75 @@
+#
+#   ██████╗██████╗ ██╗███╗  ██╗███╗  ██╗██╗███╗  ██╗
+#  ██╔════╝██╔══██╗██║████╗ ██║████╗ ██║██║████╗ ██║
+#  ╚█████╗░██████╔╝██║██╔██╗██║██╔██╗██║██║██╔██╗██║
+#   ╚═══██╗██╔═══╝ ██║██║╚████║██║╚████║██║██║╚████║
+#  ██████╔╝██║     ██║██║ ╚███║██║ ╚███║██║██║ ╚███║
+#  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚══╝╚═╝  ╚══╝╚═╝╚═╝  ╚══╝
+#
+
+prefix: "<gradient:#A55AE3:#D5352B>KR-Portals • <reset>"
+not-perms: "%prefix%<#FB0044>⚠ No tienes permisos para usar este comando"
+need-correct-args: "%prefix%<#FB0044>⚠ Necesita más argumentos o argumentos correctos para usar este comando"
+only-player: "%prefix%<#FB0044>⚠ Este comando solo puede ser usado por jugadores."
+help:
+  info: |2 
+  
+    %prefix%Plugin comandos <#717171>©Spinnin34
+    <#A55AE3>» <#717171>/tportals status <end | nether> <enable | disable> - <#A55AE3>Cambiar el estado de los portales
+    <#A55AE3>» <#717171>/tportals destination <end | nether> <spawn> - <#A55AE3>Teletransportarse al destino de generación
+    <#A55AE3>» <#717171>/tportals destination <end | nether> <setspawn> - <#A55AE3>Cambiar destino de generación
+    <#A55AE3>» <#717171>/tportals destination <end | nether> <enable | disable> - <#A55AE3>Cambiar estado de cambio de destino
+    <#A55AE3>» <#717171>/tportals reload - <#A55AE3>Reload plugin
+
+status:
+  info:
+    info: |2 
+    
+      %prefix%Portals status <#717171>©Spinnin34
+      <#A55AE3>» <white>End-portals: %end_portal_status%
+      <#D5352B>» <white>Nether-portals: %nether_portal_status%
+    
+      %prefix%Destination status <#717171>©Spinnin34
+      <#A55AE3>» <white>End-portals: %end_destination_status%
+      <#D5352B>» <white>Nether-portals: %nether_destination_status%
+
+    states:
+      - <red>disabled # Disabled placeholder
+      - <green>enabled # Enabled placeholder
+  change:
+    info: "%prefix%Tu %portal_status% %portal_name% <white>portales"
+    portals:
+      - <#A55AE3>end # End placeholder
+      - <#D5352B>nether # Nether placeholder
+    states:
+      - <#FB0044>Desactivado
+      - <#97FF81>Activado
+  can-not-use:
+    end:
+      title: "<#A55AE3>End <white>los portales están deshabilitados"
+      subtitle: "<#FB0044>⚠ No puedes usarlos <#FB0044>⚠"
+    nether:
+      title: "<#D5352B>Nether <white>los portales están deshabilitados"
+      subtitle: "<#FB0044>⚠ No puedes usarlos <#FB0044>⚠"
+destination:
+  change:
+    info: "%prefix%Tu %destination_status% <white>cambiar los destinos para %portal_name% <white>portales"
+    portals:
+      - <#A55AE3>end
+      - <#D5352B>nether
+    states:
+      - <#FB0044>Desactivado
+      - <#97FF81>Activado
+  setspawn:
+    info: |2 
+    
+      %prefix%Tu configuras el %portal_name% <white>punto de generación de portales
+      <#A55AE3>» <white>World: <#A55AE3>%world_name% 
+      <#A55AE3>» <white>X: <#A55AE3>%coords_x% | <white>Y: <#A55AE3>%coords_y% | <white>Z: <#A55AE3>%coords_z% 
+      <#A55AE3>» <white>Yaw: <#A55AE3>%coords_yaw% | <white>Pitch: <#A55AE3>%coords_pitch%
+
+    portals:
+      - <#A55AE3>end # End placeholder
+      - <#D5352B>nether # Nether placeholder
+reload:
+  info: "%prefix%<#717171><#717171>Reloading plugin..."
